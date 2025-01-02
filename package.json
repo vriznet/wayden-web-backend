@@ -3,10 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": ""
+    "dev": "nodemon --exec node server.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.13.0",
+    "graphql": "^16.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
 }
-
