@@ -1,10 +1,16 @@
 import { gql } from 'apollo-server';
 
 export default gql`
+  type LoginResult {
+    ok: Boolean!
+    token: String
+    error: String
+  }
   type User {
     id: Int!
-    email: String
+    email: String!
     nick: String!
+    password: String!
     createdAt: String!
     updatedAt: String!
   }
@@ -13,8 +19,23 @@ export default gql`
     user(id: Int!): User
   }
   type Mutation {
-    createUser(email: String!, nick: String!): User
-    deleteUser(id: Int!): User
-    updateUser(id: Int!, email: String, nick: String): User
+    createUser(
+      email: String!
+      nick: String!
+      password: String!
+    ): MutationResponse!
+    deleteUser(id: Int!): MutationResponse!
+    updateUser(
+      id: Int!
+      email: String
+      nick: String
+      password: String
+    ): MutationResponse!
+    createAccount(
+      email: String!
+      nick: String!
+      password: String!
+    ): MutationResponse!
+    login(email: String!, password: String!): LoginResult!
   }
 `;
