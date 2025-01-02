@@ -1,23 +1,8 @@
-import { ApolloServer, gql } from 'apollo-server';
-import { PrismaClient } from '@prisma/client';
-
-const client = new PrismaClient();
-
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`;
-
-const resolvers = {
-  Query: {
-    hello: () => 'bebe',
-  },
-};
+import { ApolloServer } from 'apollo-server';
+import schema from './schema';
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+  schema,
 });
 
 server
