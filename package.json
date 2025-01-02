@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "nodemon --exec ts-node src/server --ext ts,js --delay 1"
+    "dev": "nodemon --exec ts-node src/server --ext ts,js --delay 1",
+    "migrate": "npx prisma migrate dev"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^6.1.0",
     "@types/bcrypt": "^5.0.2",
     "@types/express": "^5.0.0",
     "@types/graphql-upload": "^17.0.0",
@@ -25,6 +27,7 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.9",
+    "prisma": "^6.1.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   }
