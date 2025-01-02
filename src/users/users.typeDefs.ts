@@ -31,11 +31,5 @@ export default gql`
       nick: String
       password: String
     ): MutationResponse!
-    createAccount(
-      email: String!
-      nick: String!
-      password: String!
-    ): MutationResponse!
-    login(email: String!, password: String!): LoginResult!
   }
 `;
