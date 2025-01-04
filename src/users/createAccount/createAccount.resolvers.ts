@@ -1,10 +1,9 @@
-import client from '../../client';
 import { Resolvers } from '../../types';
 import bcrypt from 'bcrypt';
 
 const resolvers: Resolvers = {
   Mutation: {
-    createAccount: async (_, { email, nick, password }) => {
+    createAccount: async (_, { email, nick, password }, { client }) => {
       try {
         const existingNick = await client.user.findFirst({
           where: { nick },

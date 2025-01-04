@@ -1,11 +1,10 @@
-import client from '../../client';
 import { Resolvers } from '../../types';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
 const resolvers: Resolvers = {
   Mutation: {
-    login: async (__dirname, { email, password }) => {
+    login: async (__dirname, { email, password }, { client }) => {
       try {
         const user = await client.user.findFirst({ where: { email } });
 
